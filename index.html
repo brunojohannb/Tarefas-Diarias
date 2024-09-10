@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html>
 
-
   <head>
 
-    <title>Task List</title>
-    
-
+    <title>Tarefas Diarias</title>
 
 
   </head>
+
   <body>
 
     <h1>Tarefas</h1>
     <ul></ul>
-
     <input>
     <button onclick="add()">Adicionar</button>
 
     <script>
 
-        const Tarefas = ['Estudar Programação','Treinar','Preparar Refeições']
+      const tarefas = ['Tomar Café', 'Treinar', 'Tomar Banho']
 
 
-
-        function add(){
-            const input = document.querySelector("input")
-            const Tarefas = input.value
-
-        }
-
-        function render(){
-            
-
-        }
-
-
+       function add(){
+        const input = document.querySelector("input")
+        const tarefa = input.value
+        tarefas.push(tarefa)
+        input.value = ""
         render()
+        
 
+       }
+
+       function render(){
+        const ul = document.querySelector("ul")
+        ul.innerHTML = null
+
+        tarefas.forEach(function (tarefa) {
+          const li = document.createElement("li")
+          li.innerText = tarefa
+          ul.appendChild(li)
+          
+        })
+
+
+       }
+
+       render()
+
+ 
     </script>
-
-
   </body>
-
-
 
 </html>
