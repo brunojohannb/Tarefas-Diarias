@@ -8,5 +8,68 @@ margin: 0;
 body {
 
 min-height: 100vh;
+display: flex;
+flex-direction: column;
+border: solid 20px #2F3E46;
+background: solid #2F3E46;
+font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+header {
+
+color: #CAD2C5;
+background: #2F3E46;
+
+
+}
+
+main{
+
+flex: auto;
+background: #52796F;
+padding: 20px;
+
+
+}
+
+main ul {
+
+padding: 0;
+list-style: none;
+
+}
+
+main li {
+
+border-bottom: 1px solid #2F3E46;
+padding: 4px 0;
+
+
+
+}
+
+footer{
+
+display: flex;
+
+
+}
+
+footer input {
+
+flex: auto;
+padding: 5px;
+border-radius: 2px;
+
+
+}
+
+footer button {
+
+font-size: large;
+font-family: Impact, 'Arial Narrow Bold', sans-serif;
+border-radius: 2px;
 
 }
