@@ -1,4 +1,4 @@
-const tarefas = ['Tomar Café', 'Treinar', 'Tomar Banho']
+const listatarefas = ['Tomar Café', 'Treinar', 'Tomar Banho']
 
 
        function add(){

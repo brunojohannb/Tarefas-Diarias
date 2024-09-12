@@ -10,8 +10,8 @@ body {
 min-height: 100vh;
 display: flex;
 flex-direction: column;
-border: solid 20px #2F3E46;
-background: solid #2F3E46;
+border: solid 10px #2F3E46;
+background: #2F3E46;
 font-family: Arial, Helvetica, sans-serif;
 
 }
@@ -20,8 +20,8 @@ font-family: Arial, Helvetica, sans-serif;
 header {
 
 color: #CAD2C5;
-background: #2F3E46;
-
+text-align: center;
+padding: 10px 0;
 
 }
 
@@ -30,6 +30,8 @@ main{
 flex: auto;
 background: #52796F;
 padding: 20px;
+border-radius: 10px;
+font-weight: bold;
 
 
 }
@@ -60,16 +62,18 @@ display: flex;
 footer input {
 
 flex: auto;
-padding: 5px;
-border-radius: 2px;
+padding: 10px;
+border-radius: 10px;
+background: white;
+font-weight: bold;
+font-size: medium;
 
 
 }
 
 footer button {
 
-font-size: large;
-font-family: Impact, 'Arial Narrow Bold', sans-serif;
-border-radius: 2px;
+border-radius: 10px;
+background: #CAD2C5;
 
 }

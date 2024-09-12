@@ -4,25 +4,46 @@
   <head>
 
     <title>Tarefas Diarias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
     <link rel="stylesheet" href="index.css"></link>
-
 
   </head>
 
   <body>
 
-    <header>
+    <div class="Conteudo"></div>
+
+     <header>
       <h1>Tarefas Diarias</h1>
-    </header>
+     </header>
 
-    <main>
-      <ul></ul>
-    </main>
+     <main>
+       <ul id="listaTarefas">
+         <li>
+           <span class="textoTarefa"></span>
+           <div>
+            <button class="btnAcao">
+              <i class="fa fa-pencil"></i>
+            </button>
+            <button class="btnAcao">
+              <i class="fa fa-trash"></i>
+            </button>
 
-    <footer>
-      <input>
-      <button onclick="add()">Adicionar</button>
-    </footer>
+           </div>
+         </li>
+       </ul>
+     </main>
+
+     <footer>
+       <input type="text"
+             id="InputNovaTarefa"
+             placeholder="Insira Uma Nova Tarefa">
+       <button id="addTarefa" onclick="add()">
+             <i class="fa fa-plus"></i>
+       </button>
+     </footer>
+
+    </div>
 
 
     <script type="text/javascript" src="index.js">
