@@ -1,7 +1,3 @@
-@font-face {
-    font-family: Terminal;
-    src: url("Terminal.ttf");
-}
 
 
 * {
@@ -110,46 +106,34 @@ padding: 20px;
 background: #0b8770;
 border-radius: 12px;
 align-items: center;
+margin-top: 25px;
 
 
 }
 
-.btnPencil {
+li span {
+
+color: #ebe68d;
+
+}
+
+.btnAcao {
 
 border-radius: 12px;
-border: 1px solid #0b8770;
+border: 1px solid #314d4a;
 width: 38px;
 height: 38px;
+margin-right: 8px;
+cursor: pointer;
 background: #314d4a;
 color: #ebe68d;
 
 }
 
-.btnPencil:hover {
+.btnAcao:hover {
 
 background: #a6c288;
 border: 1px solid #a6c288;
 color: #314d4a;
-cursor: pointer;
-
-}
-
-.btnTrash {
-
-border-radius: 12px;
-border: 1px solid #0b8770;
-width: 38px;
-height: 38px;
-background: #314d4a;
-color: #ebe68d;
-
-}
-
-.btnTrash:hover {
-
-background: #a6c288;
-border: 1px solid #a6c288;
-color: #314d4a;
-cursor: pointer;
 
 }
