@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
   <head>
 
@@ -11,45 +11,42 @@
 
   <body>
 
-    <div class="Conteudo"></div>
+    <div class="conteudo-total">
 
-     <header>
-      <h1>Tarefas Diarias</h1>
-     </header>
+     <h1>Tarefas Diárias</h1>
+      
+     <div class="topo">
 
-     <main>
-       <ul id="listaTarefas">
-         <li>
-           <span class="textoTarefa"></span>
-           <div>
-            <button class="btnAcao">
-              <i class="fa fa-pencil"></i>
-            </button>
-            <button class="btnAcao">
-              <i class="fa fa-trash"></i>
-            </button>
-
-           </div>
-         </li>
-       </ul>
-     </main>
-
-     <footer>
-       <input type="text"
+      <input type="text"
              id="InputNovaTarefa"
              placeholder="Insira Uma Nova Tarefa">
        <button id="addTarefa" onclick="add()">
              <i class="fa fa-plus"></i>
        </button>
-     </footer>
+
+     </div> 
+
+      <ul id="listaTarefas">
+         <li>
+           <span class="textoTarefa">tarefa 1</span>
+           <div id="btnEdicao">
+            <button class="btnPencil">
+              <i class="fa fa-pencil"></i>
+            </button>
+            <button class="btnTrash">
+              <i class="fa fa-trash"></i>
+            </button>
+           </div>
+         </li>
+      </ul>
+
 
     </div>
-
 
     <script type="text/javascript" src="index.js">
 
     </script>
 
   </body>
-
+ 
 </html>
