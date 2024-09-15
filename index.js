@@ -33,20 +33,26 @@ function gerarId() {
     
     return Math.floor(Math.random() * 3000);
 
-}
+};
 
 function adicionarTarefa(tarefa) {
 
-    let li = criarTagLI(tarefa);
-    listaTarefas.appendChild (li);
-    InputNovaTarefa.value = '';
+    if (InputNovaTarefa.value == "") {
+        alert('Adicione uma tarefa');
+    } else {
+         let li = criarTagLi(tarefa)
+    listaTarefas.appendChild(li);
+    inputNovaTarefa.value = "";
+
+    }
 
 
-}
+};
 
 function criarTagLI(tarefa) {
 
     let li = document.createElement('li');
+    li.id = tarefa.id;
 
     let span = document.createElement('span');
     span.classList.add('textoTarefa');
@@ -54,7 +60,7 @@ function criarTagLI(tarefa) {
 
     let div = document.createElement('div');
 
-    let btnPencil = document.createElement('buttton');
+    let btnPencil = document.createElement('button');
     btnPencil.classList.add('btnAcao');
     btnPencil.innerHTML = '<i class="fa fa-pencil"></i>';
     btnPencil.setAttribute('onclick', 'editar('+tarefa.id+')');
