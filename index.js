@@ -29,7 +29,6 @@ addTarefa.addEventListener('click', (e) => {
 });
 
 
-
 function gerarId() {
     
     return Math.floor(Math.random() * 3000);
@@ -58,10 +57,12 @@ function criarTagLI(tarefa) {
     let btnPencil = document.createElement('buttton');
     btnPencil.classList.add('btnAcao');
     btnPencil.innerHTML = '<i class="fa fa-pencil"></i>';
+    btnPencil.setAttribute('onclick', 'editar('+tarefa.id+')');
 
     let btnTrash = document.createElement('button');
     btnTrash.classList.add('btnAcao');
     btnTrash.innerHTML = '<i class="fa fa-trash"></i>';
+    btnTrash.setAttribute('onclick', 'excluir('+tarefa.id+')');
 
     div.appendChild(btnPencil);
     div.appendChild(btnTrash);
@@ -71,9 +72,17 @@ function criarTagLI(tarefa) {
 
     return li;
 
-}
+};
 
+function editar(idTarefa) {
+    alert(idTarefa)
 
+};
+
+function excluir(idTarefa) {
+    alert(idTarefa)
+
+};
 
 
 
