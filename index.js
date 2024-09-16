@@ -38,14 +38,13 @@ function gerarId() {
 function adicionarTarefa(tarefa) {
 
     if (InputNovaTarefa.value == "") {
-        alert('Adicione uma tarefa');
+        exibirErro();
     } else {
-         let li = criarTagLi(tarefa)
+         let li = criarTagLI(tarefa)
     listaTarefas.appendChild(li);
-    inputNovaTarefa.value = "";
+    InputNovaTarefa.value = "";
 
     }
-
 
 };
 
@@ -89,6 +88,25 @@ function excluir(idTarefa) {
     alert(idTarefa)
 
 };
+
+function exibirErro() {
+    var popup = document.getElementById("popupErro");
+    popup.style.display = "block";
+};
+
+var fechar = document.getElementById("fecharPopup");
+fechar.onclick = function() {
+  var popup = document.getElementById("popupErro");
+  popup.style.display = "none";
+};
+
+window.onclick = function(event) {
+    var popup = document.getElementById("popupErro");
+    if (event.target == popup) {
+      popup.style.display = "none";
+    }
+};
+
 
 
 
