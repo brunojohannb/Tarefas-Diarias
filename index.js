@@ -85,7 +85,15 @@ function editar(idTarefa) {
 };
 
 function excluir(idTarefa) {
-    alert(idTarefa)
+    let confirmacao = window.confirm('Tem certeza que deseja excluir?');
+    if(confirmacao) {
+        let li = document.getElementById('' +idTarefa+ '');
+        if(li) {
+            listaTarefas.removeChild(li);
+
+        }
+
+    }
 
 };
 
