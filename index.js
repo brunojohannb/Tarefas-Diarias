@@ -3,21 +3,17 @@ let addTarefa = document.querySelector ('#addTarefa');
 let listaTarefas = document.querySelector ('#listaTarefas');
 
 
-InputNovaTarefa.addEventListener('keypress', (e) => {
+InputNovaTarefa.addEventListener('keydown', (e) => {  
 
-    if(e.key === 'Enter'){
-      if (InputNovaTarefa.value.trim() === "") {
-        exibirErro();
-      } else {
-        let tarefa = {
-            nome: InputNovaTarefa.value,
-            id: gerarId(),
-        };
-    
-    }
+    if (e.key === 'Enter') {
+            let tarefa = {
+                nome: InputNovaTarefa.value,
+                id: gerarId(),
+            };
 
-        adicionarTarefa(tarefa);
-    }
+            adicionarTarefa(tarefa);  
+         
+        }
 });
 
 addTarefa.addEventListener('click', (e) => {
@@ -31,6 +27,7 @@ addTarefa.addEventListener('click', (e) => {
         };
 
         adicionarTarefa(tarefa);
+    
     }
 });
 
@@ -100,6 +97,7 @@ let fechar = document.getElementById("fecharPopup");
 fechar.onclick = function() {
   let popup = document.getElementById("popupErro");
   popup.style.display = "none";
+
 };
 
 window.onclick = function(event) {
