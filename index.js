@@ -5,12 +5,16 @@ let listaTarefas = document.querySelector ('#listaTarefas');
 
 InputNovaTarefa.addEventListener('keypress', (e) => {
 
-    if(e.keyCode == 13){
+    if(e.key === 'Enter'){
+      if (InputNovaTarefa.value.trim() === "") {
+        exibirErro();
+      } else {
         let tarefa = {
             nome: InputNovaTarefa.value,
             id: gerarId(),
-
-        }
+        };
+    
+    }
 
         adicionarTarefa(tarefa);
     }
@@ -18,16 +22,17 @@ InputNovaTarefa.addEventListener('keypress', (e) => {
 
 addTarefa.addEventListener('click', (e) => {
 
+     if (InputNovaTarefa.value.trim() === "") {
+        exibirErro();
+     } else {
         let tarefa = {
             nome: InputNovaTarefa.value,
             id: gerarId(),
-
-        }
+        };
 
         adicionarTarefa(tarefa);
-    
+    }
 });
-
 
 function gerarId() {
     
@@ -37,16 +42,12 @@ function gerarId() {
 
 function adicionarTarefa(tarefa) {
 
-    if (InputNovaTarefa.value == "") {
-        exibirErro();
-    } else {
-         let li = criarTagLI(tarefa)
-    listaTarefas.appendChild(li);
-    InputNovaTarefa.value = "";
-
-    }
+  let li = criarTagLI(tarefa)
+  listaTarefas.appendChild(li);
+  InputNovaTarefa.value = "";
 
 };
+
 
 function criarTagLI(tarefa) {
 
@@ -85,36 +86,43 @@ function editar(idTarefa) {
 };
 
 function excluir(idTarefa) {
-    let confirmacao = window.confirm('Tem certeza que deseja excluir?');
-    if(confirmacao) {
-        let li = document.getElementById('' +idTarefa+ '');
-        if(li) {
-            listaTarefas.removeChild(li);
-
-        }
-
-    }
+    let li = document.getElementById(idTarefa);
+    exibirPopupConfirmacao(li);
 
 };
 
 function exibirErro() {
-    var popup = document.getElementById("popupErro");
+    let popup = document.getElementById("popupErro");
     popup.style.display = "block";
 };
 
-var fechar = document.getElementById("fecharPopup");
+let fechar = document.getElementById("fecharPopup");
 fechar.onclick = function() {
-  var popup = document.getElementById("popupErro");
+  let popup = document.getElementById("popupErro");
   popup.style.display = "none";
 };
 
 window.onclick = function(event) {
-    var popup = document.getElementById("popupErro");
+    let popup = document.getElementById("popupErro");
     if (event.target == popup) {
       popup.style.display = "none";
     }
 };
 
+function exibirPopupConfirmacao(tarefaElement) {
+    var popupex = document.getElementById("popupConfirmacao");
+    popupex.style.display = "block";
 
+    document.getElementById("confirmarExclusao").onclick = function() {
+        tarefaElement.remove();  
+        popupex.style.display = "none";
+    };
+
+    document.getElementById("cancelarExclusao").onclick = function() {
+        popupex.style.display = "none"; 
+
+    };
+
+};
 
 
