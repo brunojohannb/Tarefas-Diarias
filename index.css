@@ -209,5 +209,17 @@ margin-top: 1rem;
 width: 100px;
 height: 40px;
 border-radius: 12px;
+border: 1px solid #314d4a;
+background: #314d4a;
+color: #ebe68d;
+
+
+}
+
+.popup-excont button:hover {
+
+background: #a6c288;
+color: #17181f;
+cursor: pointer;
 
 }
